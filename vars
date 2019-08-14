@@ -17,3 +17,15 @@ export PATH=.:$PATH
 
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:${ANDROID_HOME}/tools
+
+export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+export PATH=$PATH:$BUILDOUT_BIN
+
+# setUpVirtualEnv # function in ~/.bashrc
+
+# needed for flodash analytics
+export GEOS_DIR=/opt/local
+
+export BHGE_DIR=$WORKSPACE_DIR/bhge
+export SPEEDHY_ANALYTICS_DIR=$BHGE_DIR/speedhy/speedhy-analytics
+export FLODASH_ANALYTICS_DIR=$BHGE_DIR/flodash/flodash-analytics

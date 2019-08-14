@@ -12,3 +12,22 @@ alias spp='git pull --rebase --autostash'
 
 alias ww='cd $WORKSPACE_DIR/nti-web-app'
 alias mm='cd $WORKSPACE_DIR/nti-web-mobile'
+alias fsp='cd $WORKSPACE_DIR/nti-web-oubound-financialplan'
+alias housing='cd $WORKSPACE_DIR/nti-web-oubound-housing'
+alias bo='cd $BUILDOUT_DIR'
+alias stardev="sed -i 'bak' 's/certs\/localhost.pem/pki\/localhost.pem/' ./etc/haproxy/haproxy.cfg"
+alias spd='$BUILDOUT_DIR/bin/supervisord -n'
+
+# replaces ssl-term server line, comments out 'is_widget' lines
+# alias haproxyfix='sed -i '"'"'.bak'"'"' '"'"'s/server http unix@\/Users\/.*send-proxy$/server tcp 127.0.0.1:8082 observe layer7 weight 1/; s/.*is_widget/#&/'"'"' $BUILDOUT_DIR/etc/haproxy/haproxy.cfg'
+#
+# removed the 'is_widget' substitution from command above since it's no longer in .my.config
+alias haproxyfix='sed -i '"'"'.bak'"'"' '"'"'s/server http unix@\/Users\/.*send-proxy$/server tcp 127.0.0.1:8082 observe layer7 weight 1/'"'"' $BUILDOUT_DIR/etc/haproxy/haproxy.cfg'
+
+# alias spcelery='BROKER_URL=redis://localhost:6379/0 RESULT_URL=db+sqlite:////Users/ray/projects/bhge-flodash/bhge-speedhy-analytics/celery_results.sqlite SQLALCHEMY_URL=sqlite:///Users/ray/projects/bhge-flodash/bhge-speedhy-analytics/flodash.sqlite OUTPUT_FOLDER=testbench/data/output env/bin/celery -A bhge.speedhy.tasks -l INFO -O fair worker'
+
+alias sppserve='cd $SPEEDHY_ANALYTICS_DIR; ./env/bin/pserve development.ini'
+alias spcelery='cd $SPEEDHY_ANALYTICS_DIR; BROKER_URL=redis://localhost:6379/0 RESULT_URL=db+sqlite:///$SPEEDHY_ANALYTICS_DIR/celery_results.sqlite SQLALCHEMY_URL=sqlite://$SPEEDHY_ANALYTICS_DIR/speedhy.sqlite OUTPUT_FOLDER=testbench/data/output env/bin/celery -A bhge.speedhy.tasks -l INFO -O fair worker'
+
+alias fdpserve='cd $FLODASH_ANALYTICS_DIR; ./env/bin/pserve development.ini'
+alias fdcelery='cd $FLODASH_ANALYTICS_DIR; BROKER_URL=redis://localhost:6379/0 RESULT_URL=db+sqlite:///$FLODASH_ANALYTICS_DIR/celery_results.sqlite SQLALCHEMY_URL=sqlite://$FLODASH_ANALYTICS_DIR/flodash.sqlite OUTPUT_FOLDER=testbench/data/output env/bin/celery -A bhge.flodash.tasks -l INFO -O fair worker'
