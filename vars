@@ -1,9 +1,11 @@
 export VIRTUAL_ENV=/opt/local/
 export WORKSPACE_DIR=~/Workspace
 
-export NTI_DEV_BROWSER="chrome > 72"
-export NTI_BUILDOUT_PATH=$WORKSPACE_DIR/buildout/
-export NTI_BIN=$WORKSPACE_DIR/buildout/bin/
+export BUILDOUT_DIR=$WORKSPACE_DIR/buildout
+# export BUILDOUT_DIR=$WORKSPACE_DIR/buildout-oubound
+export NTI_BUILDOUT_PATH=$BUILDOUT_DIR
+export BUILDOUT_BIN=$BUILDOUT_DIR/bin
+export NTI_BIN=$BUILDOUT_DIR/bin
 
 #export CFLAGS="-I/opt/local/include -L/opt/local/lib"
 #export EDITOR="/usr/local/bin/mate -w"
@@ -15,5 +17,12 @@ export PATH=.:$PATH
 # my zshrc uses npm_chpwd_hook.sh
 # export PATH=./node_modules/.bin:$PATH
 
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=$PATH:${ANDROID_HOME}/tools
+# export ANDROID_HOME=~/Library/Android/sdk
+# export PATH=$PATH:${ANDROID_HOME}/tools
+
+export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+export PATH=$PATH:$BUILDOUT_BIN
+
+# setUpVirtualEnv # function in ~/.bashrc
+
+export GEOS_DIR=/opt/local
