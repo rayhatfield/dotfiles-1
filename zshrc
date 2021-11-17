@@ -35,7 +35,7 @@ SPACESHIP_PROMPT_ORDER=(
   rust          # Rust section
   haskell       # Haskell Stack section
   julia         # Julia section
-  docker        # Docker section
+  #docker        # Docker section
   aws           # Amazon Web Services section
   # venv          # virtualenv section
   conda         # conda virtualenv section
@@ -106,7 +106,7 @@ plugins=(
   git
   macports
   nvm
-  osx
+  macos
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -152,3 +152,15 @@ source ~/.dotfiles/vars
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ray/projects/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ray/projects/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ray/projects/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ray/projects/google-cloud-sdk/completion.zsh.inc'; fi
+
+# init rbenv
+eval "$(rbenv init - zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
