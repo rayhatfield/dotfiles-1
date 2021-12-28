@@ -42,7 +42,7 @@ SPACESHIP_PROMPT_ORDER=(
   pyenv         # Pyenv section
   dotnet        # .NET section
   ember         # Ember.js section
-  kubecontext   # Kubectl context section
+  #kubecontext   # Kubectl context section
   exec_time     # Execution time
   line_sep      # Line break
   battery       # Battery level and status
@@ -164,3 +164,9 @@ eval "$(rbenv init - zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+source "$HOME/.dotfiles/zsh/themes/spaceship.zsh-theme"
+
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
