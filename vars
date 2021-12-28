@@ -1,28 +1,15 @@
-export VIRTUAL_ENV=/opt/local/
-export WORKSPACE_DIR=~/Workspace
+SECRETS_FILE="$(dirname ${0:A})/secrets"
 
-export BUILDOUT_DIR=$WORKSPACE_DIR/buildout
-# export BUILDOUT_DIR=$WORKSPACE_DIR/buildout-oubound
-export NTI_BUILDOUT_PATH=$BUILDOUT_DIR
-export BUILDOUT_BIN=$BUILDOUT_DIR/bin
-export NTI_BIN=$BUILDOUT_DIR/bin
-
-#export CFLAGS="-I/opt/local/include -L/opt/local/lib"
-#export EDITOR="/usr/local/bin/mate -w"
-
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+if [ -f $SECRETS_FILE ]; then
+    . $SECRETS_FILE
+fi
 
 export PATH=~/.dotfiles/scripts:$PATH
 export PATH=.:$PATH
-# my zshrc uses npm_chpwd_hook.sh
-# export PATH=./node_modules/.bin:$PATH
-
-# export ANDROID_HOME=~/Library/Android/sdk
-# export PATH=$PATH:${ANDROID_HOME}/tools
 
 export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
 export PATH=$PATH:$BUILDOUT_BIN
 
-# setUpVirtualEnv # function in ~/.bashrc
-
-export GEOS_DIR=/opt/local
+# waybetter
+export BUNDLE_GEM__FURY__IO=$GEMFURY_SECRET
+export NPM_CONFIG_REGISTRY=https://npm-proxy.fury.io/$GEMFURY_SECRET/waybetter/
