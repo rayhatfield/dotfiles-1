@@ -6,7 +6,3 @@ fi
 
 export PATH=~/.dotfiles/scripts:$PATH
 export PATH=.:$PATH
-
-# waybetter
-export BUNDLE_GEM__FURY__IO=$GEMFURY_SECRET
-export NPM_CONFIG_REGISTRY=https://npm-proxy.fury.io/$GEMFURY_SECRET/waybetter/
