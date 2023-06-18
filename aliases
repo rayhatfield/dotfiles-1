@@ -1,6 +1,7 @@
 #alias listings to color and details
 alias ls='ls -l -GFh'
 alias ll='ls -lt'
+alias la='ls -alt'
 alias grep='grep --colour=auto'
 
 alias gl="git log --graph --oneline --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
@@ -10,4 +11,4 @@ alias n='ps | grep '"'"'[n]ode'"'"''
 # https://github.com/rbenv/ruby-build/issues/1496#issuecomment-743914842
 # alias ibrew="arch -x86_64 brew"
 
-alias wb="cd ~/projects/waybetter"
+alias wk="cd ~/projects/work"
