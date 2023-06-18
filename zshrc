@@ -159,7 +159,7 @@ if [ -f '/Users/ray/projects/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ra
 if [ -f '/Users/ray/projects/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ray/projects/google-cloud-sdk/completion.zsh.inc'; fi
 
 # init rbenv
-eval "$(rbenv init - zsh)"
+# eval "$(rbenv init - zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
