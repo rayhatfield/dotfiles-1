@@ -5,7 +5,7 @@ FILES=(gitconfig profile vimrc zshrc)
 for f in "${FILES[@]}"
 do
     if [ -f ~/.$f ]; then
-        echo "~/.$f exists...remove to use .dotfile version";
+        echo "~/.$f exists. remove to use .dotfile version";
     else
         rm -f ~/.$f
         ln -s "$DIR/$f" ~/.$f
@@ -13,9 +13,16 @@ do
 done
 
 if [ -f ~/.vim/colors/solarized.vim ]; then
-    echo "~/.vim/colors/solarized.vim exists...remove to use .dotfile version"
+    echo "~/.vim/colors/solarized.vim exists. remove to use .dotfile version"
     exit 1
 fi
 
 mkdir -p ~/.vim/colors
 ln -s "$DIR/vim-colors-solarized/colors/solarized.vim" ~/.vim/colors/solarized.vim
+
+if [ -f ./macos-settings ]; then
+    echo "running ./macos-settings"
+    ./macos-settings
+else
+    echo "don't see ./macos-settings. skipping."
+fi
