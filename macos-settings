@@ -33,6 +33,10 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Disable warning when the user does empty trash.
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
+# Expand 'Save As…' dialog boxes by default:
+defaults write -g NSNavPanelExpandedStateForSaveMode -boolean true
+defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
+
 
 ## Dock
 
